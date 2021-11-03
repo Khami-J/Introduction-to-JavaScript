@@ -120,23 +120,22 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 */  
 
 function hungryDog(weight, age){
-  if(age >= 1 && weight >= 5){
+  if (age >= 1 && weight <= 5){
     return weight * 0.05;
-  }else if(age >= 1 && weight >= 6 && weight <= 10){
+  } else if (age >=1 && weight >=6 && weight <= 10){
     return weight * 0.04;
-  }else if(age >= 1 && weight >= 11 && weight <= 15){
-    return weight * 0.03
-  }else if(age >= 1 && weight >= 15){
+  } else if(age >=1 && weight >= 11 && weight <= 15){
+    return weight * 0.03;
+  } else if(age >= 1 && weight > 15){
     return weight * 0.02;
-  }else if(age < 1 && age >= 0.583){
+  }else if (age < 1 && age >= 0.583){
     return weight * 0.04;
-  }else if(age < 0.583 && age >= 0.333){
+  } else if (age < 0.583 && age >= 0.333){
     return weight * 0.05;
-  }else if(age < 0.333){
+  } else if(age < 0.333){
     return weight * 0.1;
-  
   }
-}
+  
 
 
 
@@ -160,11 +159,31 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
-function game(user, computer){
-  /*add your code here*/
+let computer = Math.floor(Math.random() * 3);
+if (computer === 0){
+  return ('rock');
+} else if (computer === 1){
+  return ('paper')
+}else if (computer === 2){
+  return ('scissors')
 }
-
+}
+function game(user, computer){
+  if(user === computer){
+    return "it's a tie"
+  }else if(user === 'rock' && computer === 'paper'){
+    return "you lose!"
+  }else if(user === 'paper' && computer === 'rock'){
+    return "you win!"
+  }else if(user === 'scissors' && computer === 'rock'){
+    return "you lose!"
+  }else if(user === 'scissors' && computer === 'paper'){
+    return "you win!"
+  }else if(user === 'rock' && computer === 'scissors'){
+    return "you win!"
+  }else if(user === 'paper' && computer === 'scissors')
+  return 'you lose!'
+  }
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -174,7 +193,7 @@ function game(user, computer){
 /*
 Using the miles function below do the following:
 1. Receive a number of kilometers
-2. Convert the number of kiolmeters received to miles
+2. Convert the number of kilometers received to miles
 3. Return the number of miles
 */
 
